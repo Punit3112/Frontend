@@ -1,6 +1,17 @@
 @import "tailwindcss";
 
 @layer components {
+  /* Header */
+
+  .header-btn {
+    @apply relative no-underline text-[88%] transition-all duration-300 ml-[38px] font-medium py-[8px] cursor-pointer max-[800px]:hidden;
+  }
+
+  /* Trusted Partner */
+  .logo-img {
+    @apply w-[150px] max-[800px]:w-[130px] max-[800px]:flex-[0_30%] max-[800px]:my-[2%];
+  }
+
   .content {
     @apply max-w-[1600px] w-[88%] mx-auto mb-[8%];
   }
