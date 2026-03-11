@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import TrustedPartners from "../components/TrustedPartners";
 import Testimonial from "../components/Testimonial";
+import Categories from "../components/Categories";
 
 export default function PricingPage() {
   return (
@@ -21,6 +22,7 @@ export default function PricingPage() {
           <CallToAction />
         </section>
         <Testimonial />
+        <Categories />
       </div>
       <Footer />
     </>

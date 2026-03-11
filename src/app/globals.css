@@ -95,9 +95,13 @@
     @apply absolute w-full h-full top-0 left-0 z-[1];
   }
 
-  /*  Row Holder */
+  /*  Common */
   .row-holder {
     @apply my-[6%] mx-auto max-[800px]:my-[16%];
+  }
+
+  .section-holder {
+    @apply mb-[6%] max-[1000px]:mb-[11%];
   }
 
   /*  Testimonial */
@@ -119,5 +123,36 @@
 
   .testimonial-author {
     @apply italic font-semibold;
+  }
+
+  /*  Categories */
+  .category-listing-holder {
+    @apply cursor-pointer relative w-[24%] min-w-[200px] max-[1150px]:mr-[3%];
+  }
+
+  .category-listing-img-holder {
+    @apply w-full h-[185px] relative rounded-[9px] bg-black overflow-hidden;
+  }
+
+  .category-listing-img {
+    @apply w-full h-full object-cover rounded-[8px] transition-transform duration-[400ms];
+    -webkit-mask-image: linear-gradient(
+      to top,
+      rgb(0 0 0 / 5%) -25%,
+      rgba(0, 0, 0, 1)
+    );
+    transition-timing-function: cubic-bezier(0.17, 0.67, 0.13, 1.02);
+  }
+
+  .category-listing-owner-holder {
+    @apply absolute bottom-[12px] left-[12px] flex items-center;
+  }
+
+  .profile-listing-owner-info-holder {
+    @apply flex flex-col;
+  }
+
+  .category-listing-owner-name {
+    @apply flex items-center text-[115%] text-white font-semibold;
   }
 }
