@@ -5,11 +5,13 @@ import CallToAction from "../components/CTA";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import TrustedPartners from "../components/TrustedPartners";
+import Testimonial from "../components/Testimonial";
 
 export default function PricingPage() {
   return (
     <>
       <Header />
+
       <div className="content">
         <Hero />
         <section className="my-[2%] mx-auto">
@@ -18,6 +20,7 @@ export default function PricingPage() {
           <Plans />
           <CallToAction />
         </section>
+        <Testimonial />
       </div>
       <Footer />
     </>

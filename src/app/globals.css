@@ -94,4 +94,30 @@
   .link-spanner {
     @apply absolute w-full h-full top-0 left-0 z-[1];
   }
+
+  /*  Row Holder */
+  .row-holder {
+    @apply my-[6%] mx-auto max-[800px]:my-[16%];
+  }
+
+  /*  Testimonial */
+  .testimonial-holder {
+    @apply w-[30%] max-[800px]:my-[10%] max-[800px]:w-full;
+  }
+
+  .quote-img {
+    @apply w-8 mb-[12px] fill-[#fb669d];
+  }
+
+  .testimonial-title {
+    @apply font-semibold text-[118%] italic;
+  }
+
+  .testimonial-txt {
+    @apply my-[5%] font-light text-[95%] leading-[1.4];
+  }
+
+  .testimonial-author {
+    @apply italic font-semibold;
+  }
 }
