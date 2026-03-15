@@ -15,7 +15,7 @@ export default function PricingPage() {
 
       <div className="content">
         <Hero />
-        <section className="my-[2%] mx-auto">
+        <section className="sections-holder">
           <BookDemo />
           <TrustedPartners />
           <Plans />
