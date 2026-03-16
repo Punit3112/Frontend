@@ -1,10 +1,13 @@
 import Badge from "./Badge";
 
 const PLATFORM_ICONS = {
-  instagram: "/icons/instagram.svg",
-  tiktok: "/icons/tiktok.svg",
-  youtube: "/icons/youtube.svg",
-  ugc: "/icons/ugc.svg",
+  instagram:
+    "https://d5ik1gor6xydq.cloudfront.net/websiteImages/creatorMarketplace/instagram.svg",
+  tiktok:
+    "https://d5ik1gor6xydq.cloudfront.net/websiteImages/creatorMarketplace/tiktok.svg",
+  youtube:
+    "https://d5ik1gor6xydq.cloudfront.net/websiteImages/creatorMarketplace/youtube.svg",
+  ugc: "https://d5ik1gor6xydq.cloudfront.net/websiteImages/creatorMarketplace/ugc.svg",
 };
 
 export default function CreatorCard({ creator }) {
@@ -45,8 +48,8 @@ export default function CreatorCard({ creator }) {
           loading="lazy"
         />
 
-        <div className="absolute bottom-2 left-2 flex items-center">
-          <div className="h-auto bg-white w-fit px-[5px] py-[2px] border border-white rounded-[50px] mb-[4px] flex">
+        <div className="absolute bottom-2 left-2 flex flex-col">
+          <div className="h-auto bg-white w-fit px-[5px] py-[2px] border border-white rounded-[50px] flex justify-center items-center">
             <img
               className="w-[12px] h-[12px] mr-[5px]"
               src={PLATFORM_ICONS[platform]}
@@ -63,7 +66,7 @@ export default function CreatorCard({ creator }) {
             {rating && (
               <span className="font-medium flex items-center">
                 <img
-                  src="/icons/star.svg"
+                  src="https://d5ik1gor6xydq.cloudfront.net/websiteImages/creatorMarketplace/star.svg"
                   className="w-[12px] mx-[3px] ml-[7px]"
                 />
                 {rating.toFixed(1)}
