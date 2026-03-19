@@ -7,8 +7,12 @@ import CaseStudies from "./components/CaseStudies";
 import { caseStudies } from "./data/caseStudies";
 import BrandLogos from "./components/BrandLogos";
 import { brandLogos } from "./data/brandLogos";
+import FAQ from "./components/Faq";
+import { faqData } from "@/app/data/faq";
 
 export default function Home() {
+  const faq = faqData["/"];
+
   return (
     <>
       <Header />
@@ -22,6 +26,7 @@ export default function Home() {
         <BrandShowcase />
         <CaseStudies caseStudies={caseStudies} />
         <BrandLogos logos={brandLogos} />
+        {faq && <FAQ title={faq.title} items={faq.items} />}
       </div>
     </>
   );
