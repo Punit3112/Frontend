@@ -68,6 +68,60 @@ export const faqData: Record<string, { title: string; items: FAQItem[] }> = {
         answer:
           "Absolutely. You can upgrade or downgrade your plan at any time from your account settings.",
       },
+      {
+        question: "What is the marketplace fee?",
+        answer:
+          "The marketplace fee is charged when you hire a creator. This fee is reduced if you subscribe to our Premium plan.",
+      },
+      {
+        question: "Can I cancel my subscription at any time?",
+        answer:
+          "Yes, you can cancel your subscription at any time from your account page.",
+      },
+      {
+        question: "",
+        answer: "",
+      },
+      {
+        question: "",
+        answer: "",
+      },
+      {
+        question: "",
+        answer: "",
+      },
+      {
+        question: "",
+        answer: "",
+      },
+      {
+        question: "",
+        answer: "",
+      },
+      {
+        question: "",
+        answer: "",
+      },
+      {
+        question: "",
+        answer: "",
+      },
+      {
+        question: "",
+        answer: "",
+      },
+      {
+        question: "",
+        answer: "",
+      },
+      {
+        question: "",
+        answer: "",
+      },
+      {
+        question: "",
+        answer: "",
+      },
     ],
   },
 
