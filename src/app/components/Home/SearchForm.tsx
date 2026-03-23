@@ -96,29 +96,38 @@ const SearchForm = ({
   };
 
   return (
-    <div ref={formRef} className="search-form-holder">
-      <div className="search-holder">
+    <div ref={formRef} className="w-[75%] mx-auto relative max-[1400px]:w-full">
+      <div
+        className="relative flex items-center justify-between rounded-[50px] shadow-[rgba(120,120,170,0.15)_0_2px_16px_0] transition-all duration-300 cursor-pointer 
+       max-[800px]:flex-col max-[800px]:rounded-[40px] max-[800px]:px-[12px] max-[800px]:pb-[12px]"
+      >
         {/* Platform Filter */}
         <div
-          className="filter-section platform-filter-section"
+          className="flex flex-col w-full relative rounded-[30px] pl-[18px] py-[14px] 
+          max-[800px]:mt-[8px] max-[800px]:pl-[22px] max-[800px]:py-[8px]"
           onClick={() => {
             setPlatformOpen((prev) => !prev);
             setCategoryOpen(false);
           }}
         >
-          <div className="filter-title">Platform</div>
+          <div className="font-semibold text-[80%]">Platform</div>
           <div
-            className={`filter-placeholder ${
-              selectedPlatform ? "filter-placeholder-chosen" : ""
+            className={`mt-[4px] text-[86%] text-[rgb(151,163,197)] ${
+              selectedPlatform
+                ? "mt-[4px] text-[86%] max-[800px]:text-[100%]"
+                : ""
             }`}
           >
             {selectedPlatform ? selectedPlatform.label : "Choose a platform"}
           </div>
 
           {platformOpen && (
-            <div className="filter-dropdown-holder platform-dropdown-holder">
+            <div
+              className="block absolute z-[999] top-[calc(100%+13px)] left-0 w-[calc(100%-30px)] max-h-[300px] overflow-y-scroll bg-white p-[14px] rounded-[30px] shadow-[var(--darkBoxShadow)] transition-all duration-300 
+            max-[800px]:w-[calc(100%-28px)] max-[800px]:max-h-[200px]"
+            >
               <div
-                className="filter-dropdown-option"
+                className="flex text-[95%] p-[15px] font-medium cursor-pointer rounded-[8px] transition-all duration-300"
                 onClick={() => {
                   setSelectedPlatform(null);
                   setPlatformOpen(false);
@@ -129,10 +138,8 @@ const SearchForm = ({
               {platforms.map((p) => (
                 <div
                   key={p.id}
-                  className={`filter-dropdown-option ${
-                    selectedPlatform?.id === p.id
-                      ? "filter-dropdown-option-selected"
-                      : ""
+                  className={`flex text-[95%] p-[15px] font-medium cursor-pointer rounded-[8px] transition-all duration-300 ${
+                    selectedPlatform?.id === p.id ? "bg-[#e7e7ea]" : ""
                   }`}
                   onClick={(e) => {
                     e.stopPropagation();
@@ -148,7 +155,7 @@ const SearchForm = ({
 
           {/* Mobile select */}
           <select
-            className="mobile-select-dropdown"
+            className="text-[100%] hidden absolute w-full h-full top-0 left-0 opacity-0 z-[9999]"
             value={selectedPlatform?.id ?? ""}
             onChange={(e) => {
               const found =
@@ -166,11 +173,16 @@ const SearchForm = ({
           </select>
         </div>
 
-        <div className="filter-seperator" />
+        <div
+          className="border-r border-[#e6e6e6] h-[36px] 
+       max-[800px]:border-r-0 max-[800px]:border-b max-[800px]:border-[#e6e6e6] 
+       max-[800px]:h-[8px] max-[800px]:w-full"
+        />
 
         {/* Category Filter */}
         <div
-          className="filter-section category-filter-section"
+          className="flex flex-col w-full relative rounded-[30px] pl-[18px] py-[14px] 
+          max-[800px]:mt-[8px] max-[800px]:pl-[22px] max-[800px]:py-[8px]"
           onClick={() => setCategoryOpen(true)}
         >
           {categoryInput && (
@@ -187,14 +199,14 @@ const SearchForm = ({
                 alt="Clear"
                 width={16}
                 height={16}
-                className="clear-input-img"
+                className="w-[9px] h-[10px]"
               />
             </div>
           )}
-          <div className="filter-title">Category</div>
-          <div className="filter-placeholder">
+          <div className="font-semibold text-[80%]">Category</div>
+          <div className="mt-[4px] text-[86%] text-[rgb(151,163,197)] max-[800px]:text-[100%]">
             <input
-              className="filter-search-input"
+              className="border-none w-[calc(100%-15px)] p-0 font-inherit"
               type="text"
               placeholder="Enter keywords, niches or categories"
               value={categoryInput}
@@ -209,10 +221,13 @@ const SearchForm = ({
           </div>
 
           {categoryOpen && (
-            <div className="filter-dropdown-holder category-dropdown-holder">
+            <div
+              className="absolute z-[999] top-[calc(100%+13px)] right-0 w-[calc(100%-30px)] max-h-[300px] overflow-y-scroll bg-white p-[14px] rounded-[30px] shadow-[var(--darkBoxShadow)] transition-all duration-300 
+            max-[800px]:w-[calc(100%-28px)] max-[800px]:max-h-[200px]"
+            >
               {suggestions.length > 0 && (
                 <div className="filter-search-input-suggestion-area">
-                  <div className="filter-search-input-suggestion-title">
+                  <div className="text-[#bbb] text-[72%] mb-[4px]">
                     Suggested
                   </div>
                   <div className="filter-search-input-suggestion-holder">
@@ -232,12 +247,14 @@ const SearchForm = ({
                 </div>
               )}
 
-              <div className="filter-search-input-pop-title">Popular</div>
-              <div className="filter-search-input-pop-holder">
+              <div className="mb-[14px] font-semibold text-[#bbb] text-[76%]">
+                Popular
+              </div>
+              <div className="flex items-center flex-wrap">
                 {popularCategories.map((cat) => (
                   <div
                     key={cat}
-                    className={`filter-search-input-pop-option ${
+                    className={`px-[12px] py-[6px] mr-[10px] mb-[12px] bg-[#F1F1F1] rounded-[5px] w-fit text-center text-[86%] transition-all duration-300 ${
                       isCategorySelected(cat) ? "selected-category" : ""
                     }`}
                     onClick={(e) => {
@@ -254,13 +271,16 @@ const SearchForm = ({
         </div>
 
         {/* Search Button */}
-        <button type="button" className="search-btn" onClick={handleSubmit}>
+        <button
+          type="button"
+          className="flex items-center justify-center bg-black text-white rounded-[50px] px-[15px] py-[14px] font-semibold border-none cursor-pointer mr-[12px] transition-all duration-300"
+          onClick={handleSubmit}
+        >
           <Image
             src="https://d5ik1gor6xydq.cloudfront.net/websiteImages/creatorMarketplace/search.svg"
             alt="Search"
-            width={20}
-            height={20}
-            className="search-img"
+            width={32}
+            height={18}
           />
         </button>
       </div>
