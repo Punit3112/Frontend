@@ -1,3 +1,5 @@
+
+
 import Header from "./components/Header";
 import HeroHolder from "./components/Home/HeroHolder";
 import { SECTIONS } from "./data/sections";
@@ -9,6 +11,7 @@ import BrandLogos from "./components/BrandLogos";
 import { brandLogos } from "./data/brandLogos";
 import FAQ from "./components/Faq";
 import { faqData } from "@/app/data/faq";
+import QuickSearch from "./components/Home/QuickSearch";
 
 export default function Home() {
   const faq = faqData["/"];
@@ -18,6 +21,7 @@ export default function Home() {
       <Header />
       <div className="content">
         <HeroHolder />
+        <QuickSearch />
         <div className="sections-holder">
           {SECTIONS.map((section) => (
             <CreatorSection key={section.id} {...section} />
