@@ -192,9 +192,10 @@ function QuickSearchItemCard({ item, onClick }: QuickSearchItemCardProps) {
   return (
     <button
       onClick={handleClick}
-      className="flex items-center shadow-[rgba(120,120,170,0.3)_0_2px_10px_0] cursor-pointer gap-[6px] px-[10px] py-[4px] rounded-[50px]"
+      style={{ boxShadow: "rgba(120,120,170,0.3) 0 2px 10px 0" }}
+      className="flex items-center justify-center cursor-pointer gap-[6px] px-[10px] py-[6px] rounded-[50px]"
     >
-      <span className="block mt-[4px]">{item.icon}</span>
+      <span className="block">{item.icon}</span>
       <span className="text-[80%] font-semibold">{item.title}</span>
     </button>
   );
@@ -215,7 +216,9 @@ export default function QuickSearch({
 }: QuickSearchProps) {
   return (
     <div
-      className={`quick-search-holder ${className}`}
+      className={`flex justify-center gap-[16px] 
+      max-[800px]:overflow-x-scroll max-[800px]:justify-start 
+      max-[800px]:gap-[12px] max-[800px]:px-[1%] max-[800px]:pt-[10%] max-[800px]:pb-[3%] max-[800px]:mx-auto ${className}`}
       role="navigation"
       aria-label="Quick search filters"
     >

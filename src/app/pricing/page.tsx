@@ -7,6 +7,7 @@ import Header from "../components/Header";
 import TrustedPartners from "../components/TrustedPartners";
 import Testimonial from "../components/Testimonial";
 import Categories from "../components/Categories";
+import PricingPlans from "../components/Pricing/PricingPlans";
 
 export default function PricingPage() {
   return (

@@ -98,7 +98,8 @@ const SearchForm = ({
   return (
     <div ref={formRef} className="w-[75%] mx-auto relative max-[1400px]:w-full">
       <div
-        className="relative flex items-center justify-between rounded-[50px] shadow-[rgba(120,120,170,0.15)_0_2px_16px_0] transition-all duration-300 cursor-pointer 
+        style={{ boxShadow: "rgba(120,120,170,0.3) 0 2px 10px 0" }}
+        className="relative flex items-center justify-between rounded-[50px] transition-all duration-300 cursor-pointer 
        max-[800px]:flex-col max-[800px]:rounded-[40px] max-[800px]:px-[12px] max-[800px]:pb-[12px]"
       >
         {/* Platform Filter */}
