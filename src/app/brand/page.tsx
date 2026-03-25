@@ -15,6 +15,7 @@ export default function PricingPage() {
       <Header />
       <div className="content">
         <HeroSection />
+
         <div className="sections-holder">
           <TrustedPartners />
           <Plans />
