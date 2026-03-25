@@ -7,7 +7,7 @@ import CaseStudies from "./components/CaseStudies";
 import { caseStudies } from "./data/caseStudies";
 import BrandLogos from "./components/BrandLogos";
 import { brandLogos } from "./data/brandLogos";
-import FAQ from "./components/Faq";
+import FAQ from "./components/FaqComp";
 import { faqData } from "@/app/data/faqData";
 import QuickSearch from "./components/Home/QuickSearch";
 
