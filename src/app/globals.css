@@ -1,26 +1,175 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer components {
+  /* Header */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  .header-btn {
+    @apply relative no-underline text-[88%] transition-all duration-300 ml-[38px] font-medium py-[8px] cursor-pointer max-[800px]:hidden;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Trusted Partner */
+  .logo-img {
+    @apply w-[150px] max-[800px]:w-[130px] max-[800px]:flex-[0_30%] max-[800px]:my-[2%];
+  }
+
+  .content {
+    @apply max-w-400 w-[88%] mx-auto mb-[8%] mt-21.25;
+  }
+
+  @media (max-width: 800px) {
+    .content {
+      @apply w-[92%] mb-[15%];
+    }
+  }
+
+  .btn {
+    @apply block text-center font-semibold border-0 text-[100%] rounded-lg no-underline cursor-pointer transition duration-300 relative;
+    box-shadow: var(--lightBoxShadow);
+    font-family: inherit;
+  }
+
+  .example-row-handler {
+    @apply flex items-center justify-between my-[5%] mx-auto max-[1000px]:my-[18%] max-[800px]:flex-col-reverse;
+  }
+
+  .example-steps-holder {
+    @apply w-[42%] max-[800px]:w-full max-[800px]:mt-8;
+  }
+
+  .example-step-tag {
+    @apply text-[115%] text-white rounded-[50px] py-[9px] px-[26px] font-semibold w-fit mb-[4%];
+    background: var(--gradientText);
+  }
+
+  .example-row-title {
+    @apply text-[190%] font-semibold mb-[9%] max-[800px]:text-[150%] max-[800px]:mt-[6%] max-[800px]:mb-[11%];
+  }
+
+  .example-step {
+    @apply my-[8%];
+  }
+
+  .example-step-title {
+    @apply my-[8%];
+  }
+
+  .example-step-title {
+    @apply m-0 font-semibold text-[125%] max-[800px]:text-[120%];
+  }
+
+  .example-step-txt {
+    @apply leading-[1.4] text-[95%] mt-[2%] text-gray-500 font-normal;
+  }
+
+  .example-img-holder {
+    @apply w-[50%] max-[800px]:w-full;
+  }
+
+  .example-img {
+    @apply w-full filter drop-shadow-[2px_8px_0.9rem_#f9f9f9] max-[800px]:drop-shadow-[2px_8px_0.9rem_#eee];
+  }
+
+  /*  Footer  */
+
+  .footer-section {
+    @apply flex flex-col w-[22%] mr-[5%] max-[800px]:w-full max-[800px]:mr-0 max-[800px]:mb-[11%];
+  }
+
+  .footer-title {
+    @apply font-semibold text-[100%] mb-[10px];
+  }
+
+  .footer-txt {
+    @apply no-underline text-inherit my-[12px] text-[90%] w-fit;
+  }
+
+  .footer-item {
+    @apply no-underline text-inherit mr-[22px] max-[800px]:mr-[25px] max-[800px]:mt-[25px];
+  }
+
+  .footer-img {
+    @apply relative w-[16px] ml-[22px] max-[800px]:ml-0 max-[800px]:mr-[22px];
+  }
+
+  .link-spanner {
+    @apply absolute w-full h-full top-0 left-0 z-[1];
+  }
+
+  /*  Common */
+  .row-holder {
+    @apply my-[6%] mx-auto max-[800px]:my-[16%];
+  }
+
+  .sections-holder{
+    @apply my-[2%] mx-auto max-[800px]:my-[2%];
+  }
+
+  .section-holder {
+    @apply mb-[6%] max-[1000px]:mb-[11%];
+  }
+
+  /*  Testimonial */
+  .testimonial-holder {
+    @apply w-[30%] max-[800px]:my-[10%] max-[800px]:w-full;
+  }
+
+  .quote-img {
+    @apply w-8 mb-[12px] fill-[#fb669d];
+  }
+
+  .testimonial-title {
+    @apply font-semibold text-[118%] italic;
+  }
+
+  .testimonial-txt {
+    @apply my-[5%] font-light text-[95%] leading-[1.4];
+  }
+
+  .testimonial-author {
+    @apply italic font-semibold;
+  }
+
+  /*  Categories */
+  .category-listing-holder {
+    @apply cursor-pointer relative w-[24%] min-w-[200px] max-[1150px]:mr-[3%];
+  }
+
+  .category-listing-img-holder {
+    @apply w-full h-[185px] relative rounded-[9px] bg-black overflow-hidden;
+  }
+
+  .category-listing-img {
+    @apply w-full h-full object-cover rounded-[8px] transition-transform duration-[400ms];
+    -webkit-mask-image: linear-gradient(
+      to top,
+      rgb(0 0 0 / 5%) -25%,
+      rgba(0, 0, 0, 1)
+    );
+    transition-timing-function: cubic-bezier(0.17, 0.67, 0.13, 1.02);
+  }
+
+  .category-listing-owner-holder {
+    @apply absolute bottom-[12px] left-[12px] flex items-center;
+  }
+
+  .profile-listing-owner-info-holder {
+    @apply flex flex-col;
+  }
+
+  .category-listing-owner-name {
+    @apply flex items-center text-[115%] text-white font-semibold;
+  }
+
+  .signup-btn{
+    @apply bg-black text-white w-55 p-5 mx-4.5 text-[105%]
+  }
+
+  .hero-holder{
+    @apply flex flex-col items-center my-[2%] max-[800px]:mt-[1%] max-[800px]:mb-0;
+  }
+
+  .hero-subtitle{
+    @apply text-gray-500 text-[105%] font-normal my-[1.5%] mb-[2.5%] text-center max-w-[80%] 
+max-[800px]:text-[95%] max-[800px]:mt-[3%] max-[800px]:mb-[6%] max-[800px]:leading-[1.4] max-[800px]:max-w-full
+  }
 }

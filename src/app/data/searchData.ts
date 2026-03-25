@@ -1,0 +1,98 @@
+// data/searchData.ts
+import { Platform } from "@/app/types/search";
+
+export const platforms: Platform[] = [
+  { id: "instagram", label: "Instagram" },
+  { id: "tiktok", label: "TikTok" },
+  { id: "user generated content", label: "User Generated Content" },
+  { id: "youtube", label: "YouTube" },
+  { id: "twitter", label: "Twitter" },
+  { id: "twitch", label: "Twitch" },
+  { id: "amazon", label: "Amazon" },
+];
+
+export const popularCategories: string[] = [
+  "Lifestyle",
+  "Beauty",
+  "Fashion",
+  "Travel",
+  "Health & Fitness",
+  "Family & Children",
+  "Food & Drink",
+  "Comedy & Entertainment",
+  "Animals & Pets",
+  "Art & Photography",
+  "Music & Dance",
+  "Model",
+  "Adventure & Outdoors",
+  "Education",
+  "Entrepreneur & Business",
+  "Athlete & Sports",
+  "Technology",
+  "Gaming",
+  "Healthcare",
+  "LGBTQ2+",
+  "Actor",
+  "Automotive",
+  "Celebrity & Public Figure",
+  "Vegan",
+  "Skilled Trades",
+  "Cannabis",
+];
+
+export const allSearchCategories: string[] = [
+  ...popularCategories,
+  "Medical",
+  "Actress",
+  "Funny",
+  "Humor",
+  "Dancing",
+  "Parent",
+  "Weed",
+  "Marijuana",
+  "Plant Based",
+  "Gamer",
+  "Streamer",
+  "CBD",
+  "Acting",
+  "Foodie",
+  // ... rest of your full list
+];
+
+export const categoryMap: Record<string, string[]> = {
+  Lifestyle: ["Home Decor", "Blogger", "Christian"],
+  Beauty: [
+    "Eyelash",
+    "Skincare",
+    "Cosmetic",
+    "Perfume",
+    "Pedicure",
+    "Tattoo",
+    "Tanning",
+    "Dermatologist",
+    "Nail",
+    "Esthetician",
+    "Hair",
+    "Makeup",
+    "Manicure",
+    "Cosmetologist",
+  ],
+  Fashion: ["Swimwear", "Streetwear"],
+  Travel: ["Nomad"],
+  "Health & Fitness": [
+    "Body Positivity",
+    "Yoga",
+    "Wellness",
+    "CrossFit",
+    "Gym",
+    "Weight Loss",
+    "Hiit",
+    "Strength Training",
+    "Powerlifting",
+    "Pilates",
+    "Nutrition",
+    "Cold Therapy",
+    "Personal Trainer",
+  ],
+  // ... rest of your map
+};
